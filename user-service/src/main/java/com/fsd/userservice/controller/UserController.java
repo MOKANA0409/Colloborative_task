@@ -8,6 +8,7 @@ import com.fsd.userservice.repository.UserRepository;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/users")
 public class UserController {
 

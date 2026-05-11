@@ -10,6 +10,7 @@ import com.fsd.taskservice.repository.TaskRepository;
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/tasks")
 public class TaskController {
 
@@ -36,6 +37,27 @@ public class TaskController {
     @PostMapping
     public Task createTask(@RequestBody Task task) {
         return repo.save(task);
+    }
+
+    @PutMapping("/{id}")
+    public Task updateTask(@PathVariable Long id, @RequestBody Task taskDetails) {
+        Task task = repo.findById(id).orElse(null);
+        if (task != null) {
+            if(taskDetails.getTitle() != null) task.setTitle(taskDetails.getTitle());
+            if(taskDetails.getDescription() != null) task.setDescription(taskDetails.getDescription());
+            if(taskDetails.getStatus() != null) task.setStatus(taskDetails.getStatus());
+            if(taskDetails.getUserId() != null) task.setUserId(taskDetails.getUserId());
+            if(taskDetails.getPriority() != null) task.setPriority(taskDetails.getPriority());
+            if(taskDetails.getDeadline() != null) task.setDeadline(taskDetails.getDeadline());
+            if(taskDetails.getStoryPoints() != null) task.setStoryPoints(taskDetails.getStoryPoints());
+            if(taskDetails.getType() != null) task.setType(taskDetails.getType());
+            if(taskDetails.getComments() != null) task.setComments(taskDetails.getComments());
+            if(taskDetails.getSubtasks() != null) task.setSubtasks(taskDetails.getSubtasks());
+            if(taskDetails.getLabels() != null) task.setLabels(taskDetails.getLabels());
+            if(taskDetails.getAttachments() != null) task.setAttachments(taskDetails.getAttachments());
+            return repo.save(task);
+        }
+        return null;
     }
 
    

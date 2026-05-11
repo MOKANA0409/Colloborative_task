@@ -1,0 +1,220 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-content {
+  background: var(--bg-color-secondary);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.task-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.task-badge.high { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+.task-badge.medium { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+.task-badge.low { background: rgba(16, 185, 129, 0.2); color: #a7f3d0; }
+
+.task-id {
+  color: var(--text-secondary);
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.modal-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-main-col {
+  flex: 3;
+  padding: 32px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+}
+
+.modal-task-title {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.ai-insight-box {
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.1), rgba(139, 92, 246, 0.05));
+  border: 1px dashed rgba(168, 85, 247, 0.3);
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.ai-insight-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c084fc;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description-section, .attachments-section, .comments-section {
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.task-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.file-upload-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-upload-zone:hover {
+  border-color: var(--accent-light);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.upload-icon {
+  color: var(--accent-color);
+  margin-bottom: 12px;
+}
+
+.file-upload-zone p span {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.upload-hint {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.attached-files {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.comment-input-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal-side-col {
+  flex: 1;
+  padding: 32px 24px;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.side-card {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.side-card h4 {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flex-align {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.member-avatar.small {
+  width: 28px;
+  height: 28px;
+  font-size: 0.7rem;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
